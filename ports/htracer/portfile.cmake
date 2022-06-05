@@ -1,11 +1,16 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO hydn10/htracer
-  REF 88ae71c3e89e134e0422978815fda8df53fde39f
-  SHA512 87f300c5424a386edfbc5eef44dfed280c13d3604e1a9fc9786cfb646131294426af074ba9999e93b56f7777c9cc917e95212f7892a98ec64c192a82e3444164
+  REF v0.2.0
+  SHA512 04e8860a7c949efac2b1d5b9135da41a4621efc065893bf0682e7383e57ffda36f9aae51ca0695093def95802b420a89c948a8d6711e2df2a909b3a68e766167
   HEAD_REF main
 )
 
-file(INSTALL ${SOURCE_PATH}/source/htracer/include/ DESTINATION ${CURRENT_PACKAGES_DIR}/include/)
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}")
+vcpkg_cmake_install()
 
+vcpkg_copy_pdbs()
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/${PORT})
+
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug" "${CURRENT_PACKAGES_DIR}/lib")
 file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
