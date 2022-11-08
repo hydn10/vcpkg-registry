@@ -1,8 +1,7 @@
 {
   "default": {
     "htracer": {
-      "baseline": "0.3.0",
-      "port-version": 1
+      "baseline": "0.4.0"
     }
   }
 }

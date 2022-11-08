@@ -1,8 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
   "name": "htracer",
-  "version": "0.3.0",
-  "port-version": 1,
+  "version": "0.4.0",
   "description": "A simple CPU raytracer library.",
   "homepage": "https://github.com/hydn10/htracer",
   "license": "MIT",
@@ -18,7 +17,7 @@
   ],
   "features": {
     "ray-app": {
-      "description": "Whether to build the ray app."
+      "description": "Build the ray app."
     }
   }
 }
